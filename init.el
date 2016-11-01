@@ -194,9 +194,9 @@
 ;; Turn off unnecessary bars
 ;;
 
-;(menu-bar-mode 0)
-;(tool-bar-mode 0)
-;(scroll-bar-mode -1)
+(menu-bar-mode 0)
+(tool-bar-mode 0)
+(scroll-bar-mode 0)
 
 ;;
 ;; Visible bell instead of audible
