@@ -195,8 +195,10 @@
 ;;
 
 (menu-bar-mode 0)
-(tool-bar-mode 0)
-(scroll-bar-mode 0)
+; tool and scroll bars are not available in terminal-mode
+; TODO: consider display-graphic-p, but this will do for now
+(when (fboundp 'tool-bar-mode) (tool-bar-mode 0))
+(when (fboundp 'scroll-bar-mode) (scroll-bar-mode 0))
 
 ;;
 ;; Visible bell instead of audible
