@@ -77,7 +77,6 @@
 
 (autoload 'markdown-mode "markdown-mode"
   "Major mode for editing Markdown files" t)
-;(add-to-list 'auto-mode-alist '("\\.text\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
 
@@ -87,6 +86,12 @@
 
 (require 'plsql)
 (setq plsql-indent 2)
+
+;;
+;; Package setup: yaml-mode
+;;
+
+(require 'yaml-mode)
 
 ;;
 ;; Use % to match various kinds of brackets (from Perl Best Practices by
