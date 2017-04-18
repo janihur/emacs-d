@@ -12,57 +12,58 @@
 ;;
 ;; C:\Users\<USERNAME>\AppData\Roaming\.emacs.d\init.el
 ;;
-;; OS X
-;; ----
+
 ;;
-;; OS X Emacs is Aquamacs:
-;;
-;; http://aquamacs.org/
-;; http://www.emacswiki.org/emacs/AquamacsEmacs
-;; http://www.emacswiki.org/emacs/CustomizeAquamacs
-;;
-;; Note that Aquamacs ignores the traditional location and uses Apple specific
-;; directory:
-;;
-;; ~/Library/Preferences/Aquamacs Emacs
-;;
-;; When using Aquamacs load this file by adding a line:
-;;
-;; (load "~/.emacs.d/init")
-;;
-;; to a file:
-;;
-;; ~/Library/Preferences/Aquamacs Emacs/Preferences.el
+;; How to install packages manually:
+;; M-x list-packages
 ;;
 
 ;;
 ;; MELPA (https://melpa.org/#/getting-started)
 ;;
+;; Prefer stable (https://stable.melpa.org/#/) when possible
+;;
 
 (require 'package)
-
-;; Use stable (https://stable.melpa.org/#/)
 
 ;; Note: There are some problems using the https location with Emacs
 ;; on Windows. There is currently no know easy fix for this. You can
 ;; still use MELPA by using the non-SSL location by replacing https
 ;; with http.
-
 (add-to-list 'package-archives
-             '("melpa-stable" . "http://stable.melpa.org/packages/") t)
+             '("melpa" . "https://melpa.org/packages/"))
+(add-to-list 'package-archives
+             '("melpa-stable" . "https://stable.melpa.org/packages/"))
 
-(when (< emacs-major-version 24)
-  ;; For important compatibility libraries like cl-lib
-  (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
+;; https://emacs.stackexchange.com/a/2989
+(setq package-archive-priorities
+      '(("melpa-stable" . 10)
+        ("gnu"          . 5)
+        ("melpa"        . 0)))
 
-(package-initialize) ;; You might already have this line
+;; http://irreal.org/blog/?p=3486
+(setq package-pinned-packages
+      '((markdown-mode . "melpa-stable")
+        (plsql         . "melpa") ; not available in stable
+        (yaml-mode     . "melpa-stable")))
+
+(package-initialize)
+
+;; install all packages
+(dolist (elem package-pinned-packages)
+  (let ((package (car elem)))
+    (unless (package-installed-p package)
+      (package-refresh-contents)
+      (package-install package))
+    )
+  )
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages (quote (markdown-mode plsql))))
+ '(package-selected-packages (quote (yaml-mode markdown-mode plsql))))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
