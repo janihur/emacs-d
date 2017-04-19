@@ -45,6 +45,7 @@
 (setq package-pinned-packages
       '((markdown-mode . "melpa-stable")
         (plsql         . "melpa") ; not available in stable
+        (web-mode      . "melpa-stable")
         (yaml-mode     . "melpa-stable")))
 
 (package-initialize)
@@ -87,6 +88,13 @@
 
 (require 'plsql)
 (setq plsql-indent 2)
+
+;;
+;; Package setup: web-mode
+;;
+
+(require 'web-mode)
+(add-to-list 'auto-mode-alist '("\\.njk\\'" . web-mode)) ; nunjucks template
 
 ;;
 ;; Package setup: yaml-mode
