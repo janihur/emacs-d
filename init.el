@@ -214,7 +214,7 @@
 
 (global-set-key (kbd "å") 'dabbrev-expand)
 (global-set-key (kbd "M-g") 'goto-line) ; instead of set-face ... prefix
-(global-set-key (kbd "C-\\") 'set-mark-command) ; C-§
+(global-set-key (kbd "<f5>") 'revert-buffer) ; as re-fresh in windows
 
 ; inspired by http://xahlee.org/emacs/
 (global-set-key (kbd "M-0") 'delete-window) ; C-x 0
