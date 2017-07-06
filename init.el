@@ -215,13 +215,14 @@
 (global-set-key (kbd "å") 'dabbrev-expand)
 (global-set-key (kbd "M-g") 'goto-line) ; instead of set-face ... prefix
 (global-set-key (kbd "<f5>") 'revert-buffer) ; as re-fresh in windows
+(global-set-key (kbd "<C-tab>") 'other-window) ; instead of C-x o
 
 ; inspired by http://xahlee.org/emacs/
-(global-set-key (kbd "M-0") 'delete-window) ; C-x 0
-(global-set-key (kbd "M-1") 'delete-other-windows) ; C-x 1
-(global-set-key (kbd "M-2") 'split-window-vertically) ; C-x 2
-(global-set-key (kbd "M-b") 'switch-to-buffer) ; C-x b
-(global-set-key (kbd "M-s") 'save-buffer) ; C-x C-s
+(global-set-key (kbd "M-0") 'delete-window) ; instead of C-x 0
+(global-set-key (kbd "M-1") 'delete-other-windows) ; instead of C-x 1
+(global-set-key (kbd "M-2") 'split-window-vertically) ; instead of C-x 2
+(global-set-key (kbd "M-b") 'switch-to-buffer) ; instead of C-x b
+(global-set-key (kbd "M-s") 'save-buffer) ; instead of C-x C-s
 
 ;;
 ;; Global value for automatic line-wrapping.
