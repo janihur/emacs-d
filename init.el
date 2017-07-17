@@ -174,6 +174,9 @@
 ;; (global-set-key (kbd "M-down") 'scroll-up-in-place)
 ;; (global-set-key [M-up] 'scroll-down-in-place)
 
+;; scroll only one line at time and 5 lines with shift
+(setq mouse-wheel-scroll-amount '(1 ((shift) . 5)))
+
 ;;
 ;; Never indent with a tab character (good except with Python)
 ;; (e.g. http://emacsblog.org/2007/09/30/quick-tip-spaces-instead-of-tabs/)
