@@ -44,7 +44,6 @@
 ;; http://irreal.org/blog/?p=3486
 (setq package-pinned-packages
       '((markdown-mode . "melpa-stable")
-        (plsql         . "melpa") ; not available in stable
         (web-mode      . "melpa-stable")
         (yaml-mode     . "melpa-stable")))
 
@@ -64,7 +63,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages (quote (yaml-mode markdown-mode plsql))))
+ '(package-selected-packages (quote (yaml-mode markdown-mode))))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -81,51 +80,6 @@
   "Major mode for editing Markdown files" t)
 (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
-
-;;
-;; Package setup: plsql-mode
-;;
-
-(require 'plsql)
-
-(setq plsql-indent 2)
-
-(add-to-list 'auto-mode-alist '("\\.obs\\'" . plsql-mode))
-(add-to-list 'auto-mode-alist '("\\.obb\\'" . plsql-mode))
-(add-to-list 'auto-mode-alist '("\\.pks\\'" . plsql-mode))
-(add-to-list 'auto-mode-alist '("\\.pkb\\'" . plsql-mode))
-(add-to-list 'auto-mode-alist '("\\.tps\\'" . plsql-mode))
-(add-to-list 'auto-mode-alist '("\\.tpb\\'" . plsql-mode))
-(add-to-list 'auto-mode-alist '("\\.pck\\'" . plsql-mode))
-(add-to-list 'auto-mode-alist '("_PKG\\.sql\\'" . plsql-mode))
-(add-to-list 'auto-mode-alist '("_pkg\\.sql\\'" . plsql-mode))
-
-(defun plsql-find-alternate-package-file ()
-  "Switch between package specification and body files. (Idea copied from tuareg mode.)"
-  (interactive)
-  (let ((name (buffer-file-name)))
-    (cond
-     ((string-match "\\`\\(.*\\)\\.pks\\'" name)
-      (find-file (concat (match-string 1 name) ".pkb")))
-     ((string-match "\\`\\(.*\\)\\.pkb\\'" name)
-      (find-file (concat (match-string 1 name) ".pks")))
-
-     ((string-match "\\`\\(.*\\)\\.obs\\'" name)
-      (find-file (concat (match-string 1 name) ".obb")))
-     ((string-match "\\`\\(.*\\)\\.obb\\'" name)
-      (find-file (concat (match-string 1 name) ".obs")))
-
-     ((string-match "\\`\\(.*\\)\\.tps\\'" name)
-      (find-file (concat (match-string 1 name) ".tpb")))
-     ((string-match "\\`\\(.*\\)\\.tpb\\'" name)
-      (find-file (concat (match-string 1 name) ".tps")))
-     )
-    )
-  )
-
-(add-hook 'plsql-mode-hook
-          (lambda ()
-            (local-set-key (kbd "C-c C-a") 'plsql-find-alternate-package-file)))
 
 ;;
 ;; Package setup: web-mode
