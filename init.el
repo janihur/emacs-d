@@ -43,7 +43,8 @@
 
 ;; http://irreal.org/blog/?p=3486
 (setq package-pinned-packages
-      '((markdown-mode . "melpa-stable")
+      '((d-mode        . "melpa-stable")
+        (markdown-mode . "melpa-stable")
         (web-mode      . "melpa-stable")
         (yaml-mode     . "melpa-stable")))
 
