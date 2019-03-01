@@ -45,6 +45,7 @@
 (setq package-pinned-packages
       '((d-mode        . "melpa-stable")
         (markdown-mode . "melpa-stable")
+        (protobuf-mode . "melpa-stable")
         (web-mode      . "melpa-stable")
         (yaml-mode     . "melpa-stable")))
 
