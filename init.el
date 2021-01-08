@@ -261,3 +261,10 @@
 ;;
 
 (setq initial-scratch-message "")
+
+;;
+;; In some environments lock files are not removed correctly
+;; https://www.gnu.org/software/emacs/manual/html_node/emacs/Interlocking.html#Interlocking
+;;
+
+(setq create-lockfiles nil)
