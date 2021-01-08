@@ -190,6 +190,7 @@
 (global-set-key (kbd "M-g") 'goto-line) ; instead of set-face ... prefix
 (global-set-key (kbd "<f5>") 'revert-buffer) ; as re-fresh in windows
 (global-set-key (kbd "<C-tab>") 'other-window) ; instead of C-x o
+(global-set-key (kbd "<backtab>") 'other-window) ; instead of C-x o
 
 ; inspired by http://xahlee.org/emacs/
 (global-set-key (kbd "M-0") 'delete-window) ; instead of C-x 0
