@@ -128,9 +128,9 @@
 (global-set-key "%" 'match-paren)
 
 ;;
-;; Scroll in place 
+;; Scroll in place
 ;; (from http://www.emacswiki.org/cgi-bin/wiki/McMahanEmacsMacros)
-;; 
+;;
 
 ;; (defun scroll-down-in-place (n)
 ;;   (interactive "p")
@@ -239,9 +239,8 @@
 ;;
 
 (setq frame-title-format
-      (concat "%b - " 
-              (downcase (car (split-string system-name "\\.")))
-              ))
+      (format "%%b - %%I %%n - %s"
+              (downcase (car (split-string (system-name) "\\.")))))
 
 ;;
 ;; Saving Emacs Sessions
@@ -252,9 +251,11 @@
 
 ;;
 ;; Run server for emacsclients
-;;
+;; But only if not yet started (https://stackoverflow.com/a/9999774/272735)
 
-(server-start)
+(if (and (fboundp 'server-running-p)
+         (not (server-running-p)))
+    (server-start))
 
 ;;
 ;; How to change the scratch message
