@@ -44,6 +44,7 @@
 ;; http://irreal.org/blog/?p=3486
 (setq package-pinned-packages
       '((d-mode        . "melpa-stable")
+        (basic-mode    . "melpa-stable")
         (markdown-mode . "melpa-stable")
         (protobuf-mode . "melpa-stable")
         (v-mode        . "melpa")
@@ -66,7 +67,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages (quote (yaml-mode markdown-mode))))
+ '(package-selected-packages (quote (basic-mode yaml-mode markdown-mode))))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -74,6 +75,14 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+;;
+;; Package setup: basic-mode
+;;
+
+(setq basic-auto-number 10)
+(setq basic-indent-offset 2)
+(setq basic-line-number-cols 4)
 
 ;;
 ;; Package setup: markdown-mode
