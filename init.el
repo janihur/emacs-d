@@ -49,6 +49,7 @@
         (protobuf-mode . "melpa-stable")
         (v-mode        . "melpa")
         (web-mode      . "melpa-stable")
+        (xonsh-mode    . "melpa")
         (yaml-mode     . "melpa-stable")))
 
 (package-initialize)
