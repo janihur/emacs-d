@@ -202,6 +202,14 @@
   (replace-match (number-to-string (1+ (string-to-number (match-string 0))))))
 
 ;;
+;; saved keyboard macros
+;; https://emacs.stackexchange.com/a/71/31440
+;;
+
+(fset 'increment-pom-patch-version
+   (lambda (&optional arg) "Keyboard macro." (interactive "p") (kmacro-exec-ring-item (quote ("<version>[4~ODODODODODODODODODODODxinsert	nu	c	m	num	s" 0 "%d")) arg)))
+
+;;
 ;; Global key bindings
 ;;
 ;; Tip: use "C-h k" to find out key binding string
