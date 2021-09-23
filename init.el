@@ -43,8 +43,9 @@
 
 ;; http://irreal.org/blog/?p=3486
 (setq package-pinned-packages
-      '((d-mode        . "melpa-stable")
-        (basic-mode    . "melpa-stable")
+      '((basic-mode    . "melpa-stable")
+        (d-mode        . "melpa-stable")
+        (dracula-theme . "melpa-stable")
         (markdown-mode . "melpa-stable")
         (protobuf-mode . "melpa-stable")
         (v-mode        . "melpa")
@@ -68,7 +69,10 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages (quote (basic-mode yaml-mode markdown-mode))))
+ '(custom-safe-themes
+   (quote
+    ("fe1c13d75398b1c8fd7fdd1241a55c286b86c3e4ce513c4292d01383de152cb7" default)))
+ '(package-selected-packages (quote (basic-mode dracula-theme yaml-mode markdown-mode))))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -76,6 +80,12 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+;;
+;; Load theme: https://draculatheme.com/emacs
+;;
+
+(load-theme 'dracula t)
 
 ;;
 ;; Package setup: basic-mode
