@@ -7,10 +7,12 @@
 ;;
 ;; ~/.emacs.d/init.el
 ;;
-;; Windows 10
-;; ----------
+;; Windows 10+
+;; -----------
 ;;
-;; C:\Users\<USERNAME>\AppData\Roaming\.emacs.d\init.el
+;; C:\Users\$env:USERNAME\AppData\Roaming\.emacs.d\init.el
+;; or
+;; $env:USERPROFILE\AppData\Roaming\.emacs.d\init.el
 ;;
 
 ;;
@@ -47,6 +49,7 @@
         ;(d-mode        . "melpa-stable")
         (dracula-theme . "melpa-stable")
         (markdown-mode . "melpa-stable")
+        (powershell    . "melpa")
         ;(protobuf-mode . "melpa-stable")
         ;(v-mode        . "melpa")
         (web-mode      . "melpa-stable")
@@ -283,6 +286,7 @@
 ;;
 ;; Run server for emacsclients
 ;; But only if not yet started (https://stackoverflow.com/a/9999774/272735)
+;;
 
 (if (and (fboundp 'server-running-p)
          (not (server-running-p)))
@@ -294,6 +298,13 @@
 ;;
 
 (setq initial-scratch-message "")
+
+;;
+;; Inhibit the startuo screen
+;; https://www.gnu.org/software/emacs/manual/html_node/elisp/Startup-Summary.html#index-inhibit_002dstartup_002dscreen
+;;
+
+(setq inhibit-startup-screen t)
 
 ;;
 ;; In some environments lock files are not removed correctly
