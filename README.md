@@ -23,3 +23,17 @@ C-x C-0
 
 * [Keyboard Macros](https://www.gnu.org/software/emacs/manual/html_node/emacs/Keyboard-Macros.html)
 * [The Keyboard Macro Counter](https://www.gnu.org/software/emacs/manual/html_node/emacs/Keyboard-Macro-Counter.html)
+
+## Remote Files
+
+Edit file in a remote host. In general:
+```
+C-x C-f /<METHOD>:<USER>@<HOST>#<PORT>:<FILENAME>
+```
+
+In practice when ssh has been configured properly:
+```
+C-x C-f /ssh:<HOST>:<FILENAME>
+```
+
+* [Remote Files](https://www.gnu.org/software/emacs/manual/html_node/emacs/Remote-Files.html)
