@@ -121,6 +121,13 @@
 (add-to-list 'auto-mode-alist '("\\.njk\\'" . web-mode)) ; nunjucks template
 
 ;;
+;; Package setup: whitespace-mode
+;;
+(add-hook 'whitespace-mode-hook
+          (lambda ()
+            (setq whitespace-style (remove 'lines whitespace-style))))
+
+;;
 ;; Package setup: yaml-mode
 ;;
 
