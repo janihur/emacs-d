@@ -123,6 +123,7 @@
 ;;
 ;; Package setup: whitespace-mode
 ;;
+
 (add-hook 'whitespace-mode-hook
           (lambda ()
             (setq whitespace-style (remove 'lines whitespace-style))))
@@ -300,11 +301,16 @@
     (server-start))
 
 ;;
-;; How to change the scratch message
-;; http://stackoverflow.com/questions/1498258/how-do-i-change-the-scratch-message-in-emacs
+;; *scratch* buffer
 ;;
 
-(setq initial-scratch-message "")
+;; default mode
+;; https://emacs.stackexchange.com/a/53877/31440
+(setq initial-major-mode 'fundamental-mode)
+
+;; disable the scratch message
+;; https://stackoverflow.com/q/1498258/272735
+(setq initial-scratch-message nil)
 
 ;;
 ;; Inhibit the startuo screen
