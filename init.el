@@ -325,6 +325,14 @@
 ;;
 
 (setq create-lockfiles nil)
+
+;;
+;; preferred coding system
+;; https://emacs.stackexchange.com/a/44540/31440
+;;
+
+(setq-default buffer-file-coding-system 'utf-8-unix)
+
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
