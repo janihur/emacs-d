@@ -44,9 +44,13 @@
         ("melpa"        . 0)))
 
 ;; http://irreal.org/blog/?p=3486
+;; 1) build-in available in 29.1
+;;    https://www.gnu.org/software/tramp/#index-method-docker
+;;    https://www.emacswiki.org/emacs/TrampAndDocker
 (setq package-pinned-packages
       '((basic-mode    . "melpa-stable")
         ;(d-mode        . "melpa-stable")
+        (docker-tramp  . "melpa-stable") ; see 1) above
         (dracula-theme . "melpa-stable")
         (markdown-mode . "melpa-stable")
         (powershell    . "melpa")
@@ -74,7 +78,8 @@
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    '("fe1c13d75398b1c8fd7fdd1241a55c286b86c3e4ce513c4292d01383de152cb7" default))
- '(package-selected-packages '(basic-mode dracula-theme yaml-mode markdown-mode)))
+ '(package-selected-packages
+   '(docker-tramp basic-mode dracula-theme yaml-mode markdown-mode)))
 
 ;;
 ;; Load theme: https://draculatheme.com/emacs
