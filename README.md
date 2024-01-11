@@ -26,10 +26,15 @@ C-x C-0
 
 ## Remote Files
 
+* [Remote Files](https://www.gnu.org/software/emacs/manual/html_node/emacs/Remote-Files.html) in Emacs manual
+* [Tramp](https://www.gnu.org/software/tramp/) manual
+
 Edit file in a remote host. In general:
 ```
 C-x C-f /<METHOD>:<USER>@<HOST>#<PORT>:<FILENAME>
 ```
+
+See [connection types](https://www.gnu.org/software/tramp/#Connection-types) for all available methods.
 
 In practice when the [SSH](https://en.wikipedia.org/wiki/Secure_Shell) has been configured properly:
 ```
@@ -37,5 +42,3 @@ C-x C-f /ssh:<HOST>:<FILENAME>
 ```
 
 In Windows use [`sshx`](https://www.gnu.org/software/emacs/manual/html_node/tramp/Inline-methods.html#index-method-sshx) method instead.
-
-* [Remote Files](https://www.gnu.org/software/emacs/manual/html_node/emacs/Remote-Files.html)
