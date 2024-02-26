@@ -34,6 +34,10 @@ Edit file in a remote host. In general:
 C-x C-f /<METHOD>:<USER>@<HOST>#<PORT>:<FILENAME>
 ```
 
+Most useful connection methods:
+* `docker`
+* `ssh` (in Linux) `sshx` (in Windows)
+
 See [connection types](https://www.gnu.org/software/tramp/#Connection-types) for all available methods.
 
 In practice when the [SSH](https://en.wikipedia.org/wiki/Secure_Shell) has been configured properly:
