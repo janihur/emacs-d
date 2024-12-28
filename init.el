@@ -44,20 +44,14 @@
         ("melpa"        . 0)))
 
 ;; http://irreal.org/blog/?p=3486
-;; 1) build-in available in 29.1
-;;    https://www.gnu.org/software/tramp/#index-method-docker
-;;    https://www.emacswiki.org/emacs/TrampAndDocker
 (setq package-pinned-packages
       '((basic-mode    . "melpa-stable")
         ;(d-mode        . "melpa-stable")
-        (docker-tramp  . "melpa-stable") ; see 1) above
         (dracula-theme . "melpa-stable")
         (markdown-mode . "melpa-stable")
-        (powershell    . "melpa")
+        ;(powershell    . "melpa")
         ;(protobuf-mode . "melpa-stable")
-        ;(v-mode        . "melpa")
         (web-mode      . "melpa-stable")
-        (xonsh-mode    . "melpa")
         (yaml-mode     . "melpa-stable")))
 
 (package-initialize)
@@ -103,20 +97,6 @@
   "Major mode for editing Markdown files" t)
 (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
-
-;;
-;; Package setup: v-mode
-;; https://github.com/damon-kwok/v-mode
-;;
-
-; remove verilog mode from the auto mode list first
-; https://stackoverflow.com/a/11633097/272735
-;; (rassq-delete-all 'verilog-mode auto-mode-alist)
-;; (require 'v-mode)
-;; (add-to-list 'auto-mode-alist '("\\.v\\'" . v-mode))
-;; (define-key v-mode-map (kbd "M-z") 'v-menu)
-;; ;(define-key v-mode-map (kbd "<f6>")  'v-menu)
-;; (define-key v-mode-map (kbd "C-c C-f") 'v-format-buffer)
 
 ;;
 ;; Package setup: web-mode
